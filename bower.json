@@ -1,0 +1,17 @@
+{
+  "name": "ryo-framework",
+  "version": "1.4.0",
+  "description": "Roll your own framework",
+  "main": "index.html",
+  "keywords": [
+    "Framework"
+  ],
+  "authors": [
+    "Annette Lunnon"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "requirejs": "~2.1.17",
+    "responsive-nav": "~1.0.39"
+  }
+}
