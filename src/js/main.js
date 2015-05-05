@@ -21,7 +21,7 @@ require(['responsive-nav.min','jqueryui'], function()
 
 		$('.jquery-ui-accordian').accordion({
 			header:'h3'
-		})
+		});
 	});
 
 

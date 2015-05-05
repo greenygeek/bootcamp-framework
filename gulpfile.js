@@ -11,7 +11,7 @@ var sass = require('gulp-ruby-sass');
 // Lint task
 
 gulp.task('lint', function() {
-	return gulp.src('/js/*.js')
+	return gulp.src('src/js/*.js')
 	.pipe(jshint())
 	.pipe(jshint.reporter('default'));
 });
@@ -19,7 +19,7 @@ gulp.task('lint', function() {
 // Watch files for changes
 gulp.task('watch', function(){
 	gulp.watch('src/js/*.js', ['lint', 'scripts'])
-	gulp.watch('src/sass*.scss',  ['sass']);
+	gulp.watch('src/sass*.scss', ['sass'])
 });
 
 
@@ -36,15 +36,14 @@ gulp.task('scripts', function() {
 // Compass Sass
 
 gulp.task( 'sass', function(){
-	return gulp.src('src/sass/styles.scss')
-	.pipe(sass({
-		compass:true,
+	return sass('src/sass/styles.scss', {
+		compass: true,
 		style:'compressed'
-	}))
+	})
 	.on('error', function (err) {console.log(err.message); })
 	.pipe(gulp.dest('assets/css'))
 });
 
 // Default task
 
-gulp.task( 'default', ['lint', 'scripts', 'sass', 'watch']);
+gulp.task( 'default', ['lint', 'scripts', 'watch', 'sass']);
